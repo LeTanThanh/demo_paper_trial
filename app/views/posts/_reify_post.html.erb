@@ -19,9 +19,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">
-          Restore
-        </button>
+        <%= link_to "Restore", restore_post_path(id: reify_post.id, version_id: version.id), method: :patch,
+          class: "btn btn-primary" %>
       </div>
     </div>
   </div>
