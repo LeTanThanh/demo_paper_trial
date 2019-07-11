@@ -16,6 +16,8 @@ gem "jbuilder", "~> 2.5"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "paper_trail"
 gem "ffaker"
+gem "jquery-rails"
+gem "bootstrap-sass"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
