@@ -5,7 +5,8 @@
     <div class="panel-heading">
       <div>
         Last updated at: <%= @post.updated_at %>
-        <button class="btn btn-xs btn-primary" style="float: right;">Random Update</button>
+        <%= link_to "Random Update", post_path(@post), method: :patch, 
+          class: "btn btn-xs btn-primary", style: "float: right;" %>
       </div>
     </div>
     <div class="panel-body">
@@ -21,7 +22,7 @@
         <td>Id</td>
         <td>Event</td>
         <td>Created at</td>
-        <td>Object</td>
+        <td></td>
       </tr>
     </thead>
     <tbody>
@@ -30,9 +31,18 @@
           <td><%= version.id %></td>
           <td><%= version.event %></td>
           <td><%= version.created_at %></td>
-          <td><%= version.object %></td>
+          <td>
+            <button class="btn btn-primary" data-toggle="modal" 
+              data-target="#js-modal-version-<%= version.id %>">
+              Preview
+            </button>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+<% @versions.each do |version| %>
+  <%= render "reify_post", version: version, reify_post: version.reify %>
+<% end %>

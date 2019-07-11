@@ -1,0 +1,28 @@
+<div id="js-modal-version-<%= version.id %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Post: <%= reify_post.title %></h4>
+      </div>
+      
+      <div class="modal-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div>
+              Last updated at: <%= reify_post.updated_at %>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= reify_post.content %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Restore
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
